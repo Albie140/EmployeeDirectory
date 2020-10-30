@@ -6,11 +6,11 @@ function Table(props) {
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>{props.users.name}</td>
-        <td>{props.users.image}</td>
-        <td>{props.users.phoneNumber}</td>
-        <td>{props.users.Email}</td>
-        <td>{props.users.birthDate}</td>
+        <td>{props.employees.name}</td>
+        <td>{props.employees.image}</td>
+        <td>{props.employees.phoneNumber}</td>
+        <td>{props.employees.Email}</td>
+        <td>{props.employees.birthDate}</td>
       </tr>
       
     </tbody>

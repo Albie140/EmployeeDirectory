@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import employees from "./employees.json";
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -13,63 +13,57 @@ class App extends Component {
     sortOrder: "ASC",
     filteredEmployees: []
   }
-handleInputChange= event =>{
-const { name, value} = event.target;
-this.employeeFilter(value)
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.employeeFilter(value)
 
 
-this.setState({
-[name]: value
-});
-};
+    this.setState({
+      [name]: value
+    });
+  };
 
-employeeFilter(name) {
-  console.log(name);
-  const filteredEmployees = employees.filter(employee => {
-    const employeeName = employee.name.includes(name)
-    console.log(employeeName);
-    if (employeeName){
+  employeeFilter(name) {
+    console.log(name);
+    const filteredEmployees = employees.filter(employee => {
+      const employeeName = employee.name.includes(name)
+      console.log(employeeName);
+      if (employeeName) {
+        return employeeName
+      }
       return employeeName
     }
-    return employeeName
-  }
-  
+
     )
-  this.setState({filteredEmployees: filteredEmployees})
+    this.setState({ filteredEmployees: filteredEmployees })
 
-}
+  }
 
-handleFormSubmit= event => {
-  event.preventDefault();
-};
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.employeeFilter(this.state.search);
+  };
   render() {
 
     return (
       <>
         <Header />
-        <Search handleInputChange={this.handleInputChange} value ={this.state.search}/>
-        {/* <TableHead> */}
-        {/* (Clickable Sort Icon) */}
-          {/* Icon, Name, Phone Number, Email, DOB */}
-      {/* <TableHead /> */}
-      <table className="table table-sm table-light mx-5 ">
-      <tr>
-        <th scope="col">Image</th>
-        <th scope="col">Name</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Date of Birth</th>
-        </tr>
-{this.state.filteredEmployees.map((users) => {
-  return ( 
-    <Table users = {users}/>
-  )
-})
-}
- </table>        
-      {/* image.png, John Doe, 1234567890, email.com, 01/01/1990 */}
-      {/* <TableRow /> */}
-      {/* }); */}
+        <Search handleInputChange = {this.handleInputChange} value={this.state.search}/>
+        <table className="table table-sm table-light mx-5 ">
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date of Birth</th>
+          </tr>
+          {this.state.filteredEmployees.map((employees) => {
+            return (
+              <Table employees={employees} />
+            )
+          })
+          }
+        </table>
 
       </>
 

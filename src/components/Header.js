@@ -4,7 +4,7 @@ import React from "react";
 
 function Header() {
     return (
-      <header className="header">
+      <header className="jumbotron">
         <h1>Employee Directory</h1>
       </header>
     );
