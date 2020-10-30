@@ -52,7 +52,7 @@ handleFormSubmit= event => {
         {/* (Clickable Sort Icon) */}
           {/* Icon, Name, Phone Number, Email, DOB */}
       {/* <TableHead /> */}
-      <table class="table table-sm table-dark">
+      <table className="table table-sm table-light mx-5 ">
       <tr>
         <th scope="col">Image</th>
         <th scope="col">Name</th>
