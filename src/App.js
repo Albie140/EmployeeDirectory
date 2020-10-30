@@ -18,7 +18,7 @@ class App extends Component {
     const { name, value } = event.target;
     console.log(value)
     let filteredEmployees = this.employeeFilter(value)
-    console.log(filteredEmployees);
+    // console.log(filteredEmployees);
 
     this.setState({
       [name]: value,
@@ -28,12 +28,12 @@ class App extends Component {
   };
 
   employeeFilter(name) {
-    console.log("hi")
-    console.log(name);
-    console.log("hey")
+    // console.log("hi")
+    // console.log(name);
+    // console.log("hey")
 
     const filteredEmployees = employees.filter(employee => {
-      console.log(employee)
+      // console.log(employee)
       const employeeName = employee.name.toLowerCase().includes(name.toLowerCase())
       console.log(employeeName);
       return employeeName
@@ -67,7 +67,7 @@ class App extends Component {
             </tr>
           </thead>
           {this.state.filteredEmployees.map((employee) => {
-            console.log(JSON.stringify(employee))
+            // console.log(JSON.stringify(employee))
             return (
               <Table employees={employee} />
             )
