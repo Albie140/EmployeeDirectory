@@ -3,7 +3,7 @@ import employees from "./employees.json";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Table from "./components/Table";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 class App extends Component {
@@ -11,64 +11,72 @@ class App extends Component {
     employees: employees,
     search: "",
     sortOrder: "ASC",
-    filteredEmployees: []
+    filteredEmployees: employees
   }
   handleInputChange = event => {
+    
     const { name, value } = event.target;
-    this.employeeFilter(value)
-
+    console.log(value)
+    let filteredEmployees = this.employeeFilter(value)
+    console.log(filteredEmployees);
 
     this.setState({
-      [name]: value
+      [name]: value,
+      filteredEmployees: filteredEmployees
     });
+    
   };
 
   employeeFilter(name) {
+    console.log("hi")
     console.log(name);
+    console.log("hey")
+
     const filteredEmployees = employees.filter(employee => {
-      const employeeName = employee.name.includes(name)
+      console.log(employee)
+      const employeeName = employee.name.toLowerCase().includes(name.toLowerCase())
       console.log(employeeName);
-      if (employeeName) {
-        return employeeName
-      }
       return employeeName
+
     }
 
     )
     this.setState({ filteredEmployees: filteredEmployees })
+    return filteredEmployees;
 
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.employeeFilter(this.state.search);
+    this.employeeFilter(event.target.value);
   };
   render() {
 
     return (
       <>
         <Header />
-        <Search handleInputChange = {this.handleInputChange} value={this.state.search}/>
+        <Search handleInputChange={this.handleInputChange} value={this.state.search} handleFormSubmit={this.handleFormSubmit} />
         <table className="table table-sm table-dark mx-5 ">
           <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Image</th>
-            <th scope="col">Phone Number</th>
-            <th scope="col">Email</th>
-            <th scope="col">Date of Birth</th>
-          </tr>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Image</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Email</th>
+              <th scope="col">Date of Birth</th>
+            </tr>
           </thead>
-          {this.state.employees.map((employee) => {
+          {this.state.filteredEmployees.map((employee) => {
+            console.log(JSON.stringify(employee))
             return (
               <Table employees={employee} />
             )
           })
           }
         </table>
-          
-        
-        
+
+
+
 
       </>
 
