@@ -56,7 +56,7 @@ class App extends Component {
       <>
         <Header />
         <Search handleInputChange={this.handleInputChange} value={this.state.search} handleFormSubmit={this.handleFormSubmit} />
-        <table className="table table-sm table-dark mx-5 ">
+        <table className="table table-sm table-dark mx-5">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -74,9 +74,6 @@ class App extends Component {
           })
           }
         </table>
-
-
-
 
       </>
 
