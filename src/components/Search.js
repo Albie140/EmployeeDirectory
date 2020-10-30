@@ -1,15 +1,16 @@
 import React from "react";
+import "./Search.css";
 
 function Search(props) {
     return (
       <form>
-        <div className="form-group margin: 0">
+        <div className="form-group">
           <label htmlFor="search">Search:</label>
           <input
             onChange = {props.handleFormSubmit}
             name="search"
             type="text"
-            className="form-control mx-auto"
+            className="form-group"
             placeholder = "Search For an Employee"
           />
           <br />

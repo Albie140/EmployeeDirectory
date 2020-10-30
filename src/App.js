@@ -49,7 +49,7 @@ class App extends Component {
       <>
         <Header />
         <Search handleInputChange = {this.handleInputChange} value={this.state.search}/>
-        <table className="table table-sm table-light mx-5 ">
+        <table className="table table-sm table-dark mx-5 ">
           <thead>
           <tr>
             <th scope="col">Name</th>
