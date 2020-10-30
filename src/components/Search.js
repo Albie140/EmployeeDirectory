@@ -9,7 +9,7 @@ function Search(props) {
             onChange = {props.handleFormSubmit}
             name="search"
             type="text"
-            className="form-control"
+            className="form-control mx-auto"
             placeholder = "Search For an Employee"
           />
           <br />

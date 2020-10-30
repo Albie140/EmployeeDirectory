@@ -60,7 +60,6 @@ class App extends Component {
           </tr>
           </thead>
           {this.state.employees.map((employee) => {
-            
             return (
               <Table employees={employee} />
             )
