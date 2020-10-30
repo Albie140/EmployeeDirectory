@@ -5,7 +5,7 @@ function Table(props) {
 
     <tbody>
       <tr>
-        <th scope="row">1</th>
+        
         <td>{props.employees.name}</td>
         <td>{props.employees.image}</td>
         <td>{props.employees.phoneNumber}</td>

@@ -50,20 +50,26 @@ class App extends Component {
         <Header />
         <Search handleInputChange = {this.handleInputChange} value={this.state.search}/>
         <table className="table table-sm table-light mx-5 ">
+          <thead>
           <tr>
-            <th scope="col">Image</th>
             <th scope="col">Name</th>
+            <th scope="col">Image</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Email</th>
             <th scope="col">Date of Birth</th>
           </tr>
-          {this.state.filteredEmployees.map((employees) => {
+          </thead>
+          {this.state.employees.map((employee) => {
+            
             return (
-              <Table employees={employees} />
+              <Table employees={employee} />
             )
           })
           }
         </table>
+          
+        
+        
 
       </>
 

@@ -3,7 +3,7 @@ import React from "react";
 function Search(props) {
     return (
       <form>
-        <div className="form-group mx-4">
+        <div className="form-group margin: 0">
           <label htmlFor="search">Search:</label>
           <input
             onChange = {props.handleFormSubmit}
